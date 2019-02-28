@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import AuthorDetail from "./AuthorDetail";
 
 class AuthorCard extends Component {
   render() {
     const author = this.props.author;
-    const authorName = `${author.first_name} ${author.last_name}`
+    const authorName = `${author.first_name} ${author.last_name}`;
     return (
       <div className="col-lg-4 col-md-6 col-12">
         <div className="card">
@@ -12,6 +13,7 @@ class AuthorCard extends Component {
               className="card-img-top img-fluid"
               src={author.imageUrl}
               alt={authorName}
+              onClick={() => this.props.selectAuthor(author)}
             />
           </div>
           <div className="card-body">
